@@ -27,7 +27,7 @@ async function loadDashboard(){
 
 
         showLoading(
-            "در حال خواندن فایل اکسل..."
+            "در حال خواندن معلومات ..."
         );
 
 
