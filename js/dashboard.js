@@ -32,9 +32,10 @@ async function loadDashboard(){
 
 
 
-        const students =
-        await loadExcelFromServer();
-
+        // const students =
+        // await loadExcelFromServer();
+const students =
+await loadDataFromServer();
 
 
         allStudents =
