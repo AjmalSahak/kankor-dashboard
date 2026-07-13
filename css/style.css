@@ -810,95 +810,189 @@ canvas{
 
 
 
-
-
-
 /* ============================================
    Dark Mode
 ============================================ */
 
 
-body.dark{
-
+body.dark {
 
     --background:#111827;
 
-
     --card:#1f2937;
-
 
     --text:#f9fafb;
 
-
     --muted:#9ca3af;
-
 
     --border:#374151;
 
-
 }
 
 
+
+/* Cards */
 
 body.dark .dashboard-card,
-body.dark .kpi-card{
+body.dark .kpi-card {
 
+    background:#1f2937;
 
-    color:white;
-
-
-}
-
-
-
-body.dark .kpi-value{
-
-
-    color:white;
-
+    color:#f9fafb;
 
 }
 
 
 
-body.dark .table{
+/* Card titles */
+
+body.dark .dashboard-card h5 {
+
+    color:#93c5fd;
+
+}
 
 
-    color:white;
 
+/* KPI */
+
+body.dark .kpi-title {
+
+    color:#9ca3af;
+
+}
+
+
+body.dark .kpi-value {
+
+    color:#ffffff;
 
 }
 
 
 
-body.dark .table thead th{
+/* Labels */
 
+body.dark .filter-card label {
 
-    background:#374151;
-
-
-    color:white;
-
+    color:#e5e7eb;
 
 }
 
 
+
+/* Inputs */
 
 body.dark .form-control,
-body.dark .form-select{
-
+body.dark .form-select {
 
     background:#111827;
 
-
-    color:white;
-
+    color:#ffffff;
 
     border-color:#374151;
 
+}
+
+
+
+body.dark .form-control::placeholder {
+
+    color:#9ca3af;
 
 }
 
+
+
+/* Tables */
+
+body.dark .table {
+
+    color:#f9fafb;
+
+}
+
+
+body.dark .table thead th {
+
+    background:#374151;
+
+    color:#ffffff;
+
+}
+
+
+
+body.dark .table tbody tr:hover {
+
+    background:rgba(255,255,255,.08);
+
+}
+
+
+
+/* Footer */
+
+body.dark .dashboard-footer {
+
+    background:#1f2937;
+
+    color:#9ca3af;
+
+    border-color:#374151;
+
+}
+
+
+body.dark .dashboard-footer strong,
+body.dark .dashboard-footer a {
+
+    color:#60a5fa;
+
+}
+
+
+
+/* Loading */
+
+body.dark #loadingStatus {
+
+    color:#60a5fa;
+
+}
+
+
+
+/* Buttons */
+
+body.dark .btn-light {
+
+    background:#374151;
+
+    color:white;
+
+    border:none;
+
+}
+
+
+
+/* Scrollbar */
+
+body.dark::-webkit-scrollbar {
+
+    width:10px;
+
+}
+
+
+body.dark::-webkit-scrollbar-thumb {
+
+    background:#374151;
+
+    border-radius:10px;
+
+}
 
 
 

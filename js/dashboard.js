@@ -21,7 +21,7 @@ loadDashboard
 
 
 async function loadDashboard(){
-
+ initializeButtons();
 
     try{
 
@@ -103,36 +103,100 @@ await loadDataFromServer();
 // Global Initialization
 // ============================================
 
+function initializeButtons(){
 
-function initializeDashboard(){
-
-
-    const excelInput =
-        document.getElementById(
-            "excelFile"
-        );
+    const darkButton =
+    document.getElementById("darkModeBtn");
 
 
+    if(darkButton){
 
-    if(excelInput){
+        if(localStorage.getItem("darkMode") === "true"){
+            document.body.classList.add("dark");
+            darkButton.querySelector("i").className = "bi bi-sun";
+        }
 
 
-        excelInput.addEventListener(
-            "change",
-            handleExcelUpload
-        );
+        darkButton.addEventListener("click", function(){
 
+            document.body.classList.toggle("dark");
+
+
+            const isDark =
+            document.body.classList.contains("dark");
+
+
+            localStorage.setItem(
+                "darkMode",
+                isDark
+            );
+
+
+            const icon =
+            darkButton.querySelector("i");
+
+
+            icon.className =
+            isDark
+            ?
+            "bi bi-sun"
+            :
+            "bi bi-moon";
+
+
+        });
 
     }
 
 
 
-    initializeButtons();
 
+
+    const fullscreenButton =
+    document.getElementById("fullscreenBtn");
+
+
+    if(fullscreenButton){
+
+        fullscreenButton.addEventListener(
+            "click",
+            async function(){
+
+                try{
+
+                    if(!document.fullscreenElement){
+
+                        await document.documentElement.requestFullscreen();
+
+                        fullscreenButton.innerHTML =
+                        '<i class="bi bi-fullscreen-exit"></i>';
+
+                    }
+                    else{
+
+                        await document.exitFullscreen();
+
+                        fullscreenButton.innerHTML =
+                        '<i class="bi bi-fullscreen"></i>';
+
+                    }
+
+                }
+                catch(error){
+
+                    console.error(
+                        "Fullscreen error:",
+                        error
+                    );
+
+                }
+
+            }
+        );
+
+    }
 
 }
-
-
 
 
 
@@ -440,77 +504,50 @@ function showLoading(message){
 // ============================================
 
 
-function initializeButtons(){
+// function initializeButtons(){
+
+//     const fullscreenButton =
+//     document.getElementById("fullscreenBtn");
 
 
+//     if(fullscreenButton){
 
-    const darkButton =
-    document.getElementById(
-        "darkModeBtn"
-    );
+//         fullscreenButton.addEventListener(
+//             "click",
+//             async function(){
 
+//                 try{
 
+//                     if(!document.fullscreenElement){
 
-    if(darkButton){
+//                         await document.documentElement.requestFullscreen();
 
+//                         fullscreenButton.innerHTML =
+//                         '<i class="bi bi-fullscreen-exit"></i>';
 
-        darkButton.onclick =
-        function(){
+//                     }
+//                     else{
 
+//                         await document.exitFullscreen();
 
-            document.body
-            .classList
-            .toggle(
-                "dark"
-            );
+//                         fullscreenButton.innerHTML =
+//                         '<i class="bi bi-fullscreen"></i>';
 
+//                     }
 
-        };
+//                 }
+//                 catch(error){
 
+//                     console.error(
+//                         "Fullscreen error:",
+//                         error
+//                     );
 
-    }
+//                 }
 
+//             }
+//         );
 
+//     }
 
-
-
-    const fullscreenButton =
-    document.getElementById(
-        "fullscreenBtn"
-    );
-
-
-
-    if(fullscreenButton){
-
-
-        fullscreenButton.onclick =
-        function(){
-
-
-            if(
-                !document.fullscreenElement
-            ){
-
-                document.documentElement
-                .requestFullscreen();
-
-
-            }
-            else{
-
-
-                document.exitFullscreen();
-
-
-            }
-
-
-        };
-
-
-    }
-
-
-
-}
+// }
