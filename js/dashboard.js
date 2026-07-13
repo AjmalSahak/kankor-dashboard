@@ -4,20 +4,98 @@
 // ============================================
 
 
+// document.addEventListener(
+//     "DOMContentLoaded",
+//     function () {
+
+
+//         initializeDashboard();
+
+
+//     }
+// );
 document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-
-        initializeDashboard();
-
-
-    }
+"DOMContentLoaded",
+loadDashboard
 );
 
 
+async function loadDashboard(){
 
 
+    try{
+
+
+        showLoading(
+            "در حال خواندن فایل اکسل..."
+        );
+
+
+
+        const students =
+        await loadExcelFromServer();
+
+
+
+        allStudents =
+        students;
+
+
+
+        filteredStudents =
+        [...students];
+
+
+
+        populateFilters(
+            filteredStudents
+        );
+
+
+
+        generateKPICards(
+            filteredStudents
+        );
+
+
+
+        initializeCharts(
+            filteredStudents
+        );
+
+
+
+        refreshTables(
+            filteredStudents
+        );
+
+
+
+        showLoading(
+
+            `تعداد ${students.length.toLocaleString()} ریکارد بارگذاری شد`
+
+        );
+
+
+
+    }
+    catch(error){
+
+
+        console.error(error);
+
+
+
+        showLoading(
+            "خطا در بارگذاری معلومات"
+        );
+
+
+    }
+
+
+}
 
 
 // ============================================

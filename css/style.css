@@ -44,34 +44,106 @@
 }
 
 
-
 body{
-
 
     background:
     var(--background);
 
-
     color:
     var(--text);
 
-
     font-family:
-
-    "Tahoma",
+    "Vazirmatn",
     "Segoe UI",
+    Tahoma,
     Arial,
     sans-serif;
 
+    font-weight:400;
 
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 
-    min-height:100vh;
+    font-family:
+    "Vazirmatn",
+    sans-serif;
 
+    font-weight:700;
+
+}
+.dashboard-footer {
+
+    margin-top:40px;
+
+    padding:20px;
+
+    text-align:center;
+
+    color:#6b7280;
+
+    font-size:14px;
+
+    border-top:1px solid #e5e7eb;
+
+    background:white;
+
+    border-radius:18px;
 
 }
 
 
+.dashboard-footer strong {
 
+    color:#0d6efd;
+
+    font-weight:700;
+
+}
+.dashboard-footer a {
+
+    color:#0d6efd;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+.dashboard-footer a:hover {
+
+    text-decoration:underline;
+
+}
+
+.table {
+
+    font-family:
+    "Vazirmatn",
+    sans-serif;
+
+    font-size:14px;
+
+}
+
+
+.table th {
+
+    font-weight:700;
+
+}
+
+
+.table td {
+
+    font-weight:400;
+
+}
 
 
 
@@ -982,5 +1054,51 @@ body.dark .form-select{
 }
 
 
+
+}
+/* ============================================
+   Top Students Table Text Fix
+============================================ */
+
+#topStudentsTable td {
+
+    white-space: normal;
+
+    word-break: break-word;
+
+    max-width: 250px;
+
+    vertical-align: middle;
+
+    line-height: 1.8;
+
+}
+
+
+
+#topStudentsTable td:nth-child(5),
+#topStudentsTable td:nth-child(6) {
+
+    min-width:250px;
+
+}
+
+
+#topStudentsTable td:nth-child(2),
+#topStudentsTable td:nth-child(3) {
+
+    min-width:150px;
+
+}
+.top-students-table {
+
+    overflow-x:auto;
+
+}
+
+
+.top-students-table table {
+
+    min-width:1100px;
 
 }
